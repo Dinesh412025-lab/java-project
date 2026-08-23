@@ -1,0 +1,4 @@
+Username,Password,Role
+admin,medgrid2026,ADMIN
+dispatcher,dispatch123,USER
+guest,guest,GUEST

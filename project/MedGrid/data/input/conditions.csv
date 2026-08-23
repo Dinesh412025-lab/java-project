@@ -1,0 +1,29 @@
+Name,Symptoms,UrgencyLevel,OtcGuidance,SpecialistRecommended
+Heart Attack,chest pain;shortness of breath;arm pain;sweating;nausea,emergency,,CARDIAC
+Stroke,face drooping;arm weakness;speech difficulty;sudden numbness,emergency,,NEUROLOGICAL
+Asthma Attack,severe wheezing;rapid breathing;chest tightness,emergency,,GENERAL
+Anaphylaxis,swelling of lips;throat closing;hives;difficulty breathing,emergency,,GENERAL
+Severe Bleeding,uncontrollable bleeding;large wound;arterial bleeding,emergency,,TRAUMA
+Common Cold,runny nose;sore throat;mild cough;sneezing,low,Rest and hydration; decongestants or antihistamines for symptom relief,GENERAL
+Influenza,fever;chills;muscle aches;fatigue,medium,Rest; fluids; antipyretics for fever reduction,GENERAL
+Migraine,severe headache;light sensitivity;nausea;aura,medium,Rest in a dark room; OTC pain relievers (e.g. ibuprofen),NEUROLOGICAL
+Allergic Rhinitis,sneezing;itchy eyes;runny nose,low,Antihistamines for allergy relief,GENERAL
+Gastroenteritis,nausea;vomiting;diarrhea;stomach cramps,low,Oral rehydration solutions; rest,GENERAL
+Minor Burn,redness;mild pain;blistering on small area,low,Cool water running over burn; soothing aloe vera ointment,BURN
+First Degree Burn,redness;skin warm to touch;mild pain,low,Aloe vera gel; mild pain relievers,BURN
+Major Burn,charred skin;white or leathery skin;large area burn,emergency,,BURN
+Toothache,tooth pain;swollen gums;sensitivity to hot or cold,medium,OTC pain relievers; cold compress,DENTAL
+Dental Abscess,severe tooth pain;fever;swelling in face;foul taste,high,Warm saltwater rinses; pain relievers while awaiting care,DENTAL
+Conjunctivitis,red eyes;itchy eyes;eye discharge;tearing,low,Artificial tears; cool compress,OPHTHALMOLOGY
+Corneal Abrasion,eye pain;feeling of grit in eye;tearing;redness,medium,Do not rub eye; artificial tears,OPHTHALMOLOGY
+Sudden Vision Loss,blindness;dark curtain over vision,emergency,,OPHTHALMOLOGY
+Pediatric Fever,fever in child;lethargy;irritability,medium,Appropriately dosed pediatric antipyretics (e.g. acetaminophen),PEDIATRIC
+Croup,barking cough;stridor;hoarseness in child,medium,Cool mist humidifier; keep child calm,PEDIATRIC
+Broken Arm,visible deformity in arm;severe pain;swelling;inability to move arm,high,Immobilize area; apply ice pack; pain relievers,TRAUMA
+Sprained Ankle,ankle pain;swelling;bruising;difficulty walking,low,RICE (Rest Ice Compression Elevation); pain relievers,TRAUMA
+Concussion,head injury;confusion;dizziness;memory loss,high,Rest; avoid screens; monitor closely,NEUROLOGICAL
+Acid Reflux,heartburn;regurgitation;chest pain after eating,low,OTC antacids; avoid spicy foods,GENERAL
+Tension Headache,dull band-like pain around head,low,OTC pain relievers; stress management,GENERAL
+Bronchitis,persistent cough;mucus production;chest discomfort,medium,Cough suppressants or expectorants; hydration,GENERAL
+Sinus Infection,facial pain;nasal congestion;thick nasal discharge,low,Saline nasal spray; decongestants; warm compress,GENERAL
+Panic Attack,racing heart;shortness of breath;fear of dying;trembling,medium,Deep breathing exercises; grounding techniques,GENERAL

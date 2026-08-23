@@ -1,0 +1,9 @@
+HospitalName,LocationName,ERCapacity,ICUCapacity,Specialties
+GenHosp-1,North,10,5,TRAUMA;GENERAL
+CardioCenter,South,5,10,CARDIAC;GENERAL
+Pediatrics,East,8,2,PEDIATRIC;GENERAL
+MetroBurnCenter,West,4,6,BURN;GENERAL
+NeuroInstitute,Center,6,12,NEUROLOGICAL;GENERAL
+CityDental,Downtown,3,0,DENTAL
+EyeCareClinic,Suburbs,5,0,OPHTHALMOLOGY
+CentralTrauma,Airport,15,10,TRAUMA;GENERAL;CARDIAC
