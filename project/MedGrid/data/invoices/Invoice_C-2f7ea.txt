@@ -1,0 +1,15 @@
+=======================================
+           MEDGRID INVOICE             
+=======================================
+Date: 2026-07-27T11:10:43.045123500
+Case ID: C-2f7ea
+Patient ID: P-b6aed
+Severity: CRITICAL
+---------------------------------------
+Base Cost (x Severity): $3000.00
+Ambulance Distance Cost: $190.00
+ICU Cost: $2000.00
+Ancillary Services Cost: $1500.00
+---------------------------------------
+TOTAL DUE: $6690.00
+=======================================
