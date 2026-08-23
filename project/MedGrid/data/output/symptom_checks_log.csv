@@ -1,0 +1,7 @@
+timestamp,input_symptoms,condition_matched,specialist_recommended
+2026-07-22T18:31:31.5049111,"runny nose, sneezing",Common Cold,GENERAL
+2026-07-22T18:31:31.5212778,"chest pain, arm pain",Heart Attack,CARDIAC
+2026-07-22T18:33:24.0596434,"sneezing, runny nose, sore throat",Common Cold,GENERAL
+2026-07-22T18:33:24.0732992,"face drooping, arm weakness",Stroke,NEUROLOGICAL
+2026-07-22T18:59:42.8628775,"body heat and headache",Unknown,GENERAL
+2026-07-22T18:59:54.8539319,"headache",Migraine,NEUROLOGICAL

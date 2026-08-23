@@ -1,0 +1,31 @@
+[2026-07-23T19:18:54.502963200] [DISPATCH_CALL] Received call for CARDIAC at Center(0,0) [Priority Added to Queue]
+[2026-07-23T19:18:54.571035200] [DISPATCH_ASSIGN] Amb-1 won bid for case C-1061d with score: 0.00
+[2026-07-23T19:18:54.574035500] [AMBULANCE_DISPATCH] Amb-1 dispatched to C-1061d
+[2026-07-23T19:18:54.599476300] [AMBULANCE_TRANSPORT] Amb-1 transporting to CardioCenter
+[2026-07-23T19:18:55.000158600] [HOSPITAL_ADMIT] CardioCenter admitted case C-1061d
+[2026-07-23T19:18:56.318318400] [DISPATCH_CALL] Received call for TRAUMA at North(0,0) [Priority Added to Queue]
+[2026-07-23T19:18:56.321867500] [DISPATCH_ASSIGN] Amb-2 won bid for case C-db714 with score: 5.00
+[2026-07-23T19:18:56.322869800] [AMBULANCE_DISPATCH] Amb-2 dispatched to C-db714
+[2026-07-23T19:18:57.009068400] [AMBULANCE_TRANSPORT] Amb-2 transporting to GenHosp-1
+[2026-07-23T19:18:57.018659600] [HOSPITAL_ADMIT] GenHosp-1 admitted case C-db714
+[2026-07-23T19:18:57.327318600] [DISPATCH_CALL] Received call for PEDIATRIC at East(0,0) [Priority Added to Queue]
+[2026-07-23T19:18:57.343020] [DISPATCH_ASSIGN] Amb-3 won bid for case C-0df28 with score: 4.00
+[2026-07-23T19:18:57.344432800] [AMBULANCE_DISPATCH] Amb-3 dispatched to C-0df28
+[2026-07-23T19:18:59.019511900] [AMBULANCE_TRANSPORT] Amb-3 transporting to Pediatrics
+[2026-07-23T19:18:59.022634300] [HOSPITAL_ADMIT] Pediatrics admitted case C-0df28
+[2026-07-23T19:18:59.319374500] [DISPATCH_CALL] Received call for GENERAL at West(0,0) [Priority Added to Queue]
+[2026-07-23T19:18:59.322484500] [DISPATCH_ASSIGN] Amb-4 won bid for case C-6cff3 with score: 7.00
+[2026-07-23T19:18:59.322484500] [AMBULANCE_DISPATCH] Amb-4 dispatched to C-6cff3
+[2026-07-23T19:19:01.032235700] [AMBULANCE_TRANSPORT] Amb-4 transporting to Pediatrics
+[2026-07-23T19:19:01.322717900] [DISPATCH_CALL] Received call for CARDIAC at South(0,0) [Priority Added to Queue]
+[2026-07-23T19:19:01.586512100] [DISPATCH_ASSIGN] Amb-1 won bid for case C-3e6e3 with score: 0.00
+[2026-07-23T19:19:01.587532500] [AMBULANCE_DISPATCH] Amb-1 dispatched to C-3e6e3
+[2026-07-23T19:19:01.632694800] [HOSPITAL_ADMIT] Pediatrics admitted case C-6cff3
+[2026-07-23T19:19:01.634153500] [AMBULANCE_TRANSPORT] Amb-1 transporting to CardioCenter
+[2026-07-23T19:19:01.639600700] [HOSPITAL_ADMIT] CardioCenter admitted case C-3e6e3
+[2026-07-23T19:19:03.319644200] [DISPATCH_CALL] Received call for GENERAL at Center(0,0) [Priority Added to Queue]
+[2026-07-23T19:19:03.323659900] [DISPATCH_ASSIGN] Amb-5 won bid for case C-760c1 with score: 0.00
+[2026-07-23T19:19:03.324642200] [AMBULANCE_DISPATCH] Amb-5 dispatched to C-760c1
+[2026-07-23T19:19:03.396328] [TRAFFIC_ALERT] HEAVY_TRAFFIC: Center to East (Delay increased!)
+[2026-07-23T19:19:03.640656600] [AMBULANCE_TRANSPORT] Amb-5 transporting to GenHosp-1
+[2026-07-23T19:19:03.973216600] [HOSPITAL_ADMIT] GenHosp-1 admitted case C-760c1

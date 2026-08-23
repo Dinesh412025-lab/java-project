@@ -1,0 +1,104 @@
+[2026-08-06T19:16:43.608113600] [DISPATCH_CALL] Received call for CARDIAC at North(0,0) [Priority Added to Queue]
+[2026-08-06T19:16:43.646867900] [DISPATCH_ASSIGN] Amb-1 won bid for case C-33488 with score: 5.00
+[2026-08-06T19:16:43.647868] [AMBULANCE_DISPATCH] Amb-1 dispatched to C-33488
+[2026-08-06T19:16:43.932529] [AMBULANCE_TRANSPORT] Amb-1 transporting to CardioCenter
+[2026-08-06T19:16:44.430290200] [HOSPITAL_ADMIT] CardioCenter admitted case C-33488
+[2026-08-06T19:16:44.999702700] [DISPATCH_CALL] Received call for TRAUMA at South(0,0) [Priority Added to Queue]
+[2026-08-06T19:16:45.003886200] [DISPATCH_ASSIGN] Amb-1 won bid for case C-b3e8c with score: 0.00
+[2026-08-06T19:16:45.004886100] [AMBULANCE_DISPATCH] Amb-1 dispatched to C-b3e8c
+[2026-08-06T19:16:45.500157600] [DISPATCH_CALL] Received call for PEDIATRIC at East(0,0) [Priority Added to Queue]
+[2026-08-06T19:16:46.439746500] [AMBULANCE_TRANSPORT] Amb-1 transporting to GenHosp-1
+[2026-08-06T19:16:46.918658900] [DISPATCH_ASSIGN] Amb-2 won bid for case C-a8cb3 with score: 3.00
+[2026-08-06T19:16:46.919662200] [HOSPITAL_ADMIT] GenHosp-1 admitted case C-b3e8c
+[2026-08-06T19:16:46.919662200] [AMBULANCE_DISPATCH] Amb-2 dispatched to C-a8cb3
+[2026-08-06T19:16:47.536123600] [DISPATCH_CALL] Received call for BURN at West(0,0) [Priority Added to Queue]
+[2026-08-06T19:16:48.922978500] [AMBULANCE_TRANSPORT] Amb-2 transporting to Pediatrics
+[2026-08-06T19:16:48.930176500] [DISPATCH_ASSIGN] Amb-3 won bid for case C-bc7c7 with score: 6.00
+[2026-08-06T19:16:48.930176500] [HOSPITAL_ADMIT] Pediatrics admitted case C-a8cb3
+[2026-08-06T19:16:48.931177] [AMBULANCE_DISPATCH] Amb-3 dispatched to C-bc7c7
+[2026-08-06T19:16:49.999644600] [DISPATCH_CALL] Received call for NEUROLOGICAL at Center(0,0) [Priority Added to Queue]
+[2026-08-06T19:16:50.500515800] [DISPATCH_CALL] Received call for DENTAL at Downtown(0,0) [Priority Added to Queue]
+[2026-08-06T19:16:50.933773800] [AMBULANCE_TRANSPORT] Amb-3 transporting to MetroBurnCenter
+[2026-08-06T19:16:50.937773700] [DISPATCH_ASSIGN] Amb-4 won bid for case C-0787a with score: 0.00
+[2026-08-06T19:16:50.938777300] [AMBULANCE_DISPATCH] Amb-4 dispatched to C-0787a
+[2026-08-06T19:16:50.951860900] [HOSPITAL_ADMIT] MetroBurnCenter admitted case C-bc7c7
+[2026-08-06T19:16:50.953869200] [AMBULANCE_TRANSPORT] Amb-4 transporting to NeuroInstitute
+[2026-08-06T19:16:50.963457200] [HOSPITAL_ADMIT] NeuroInstitute admitted case C-0787a
+[2026-08-06T19:16:50.964457400] [DISPATCH_ASSIGN] Amb-5 won bid for case C-600ce with score: 2.00
+[2026-08-06T19:16:50.964457400] [AMBULANCE_DISPATCH] Amb-5 dispatched to C-600ce
+[2026-08-06T19:16:52.500619300] [DISPATCH_CALL] Received call for OPHTHALMOLOGY at Suburbs(0,0) [Priority Added to Queue]
+[2026-08-06T19:16:52.502950100] [TRAFFIC_ALERT] ROAD_BLOCKED: West to Center (Delay increased!)
+[2026-08-06T19:16:52.964697900] [AMBULANCE_TRANSPORT] Amb-5 transporting to CityDental
+[2026-08-06T19:16:52.967698200] [DISPATCH_ASSIGN] Amb-3 won bid for case C-d6b40 with score: 4.00
+[2026-08-06T19:16:52.968697500] [AMBULANCE_DISPATCH] Amb-3 dispatched to C-d6b40
+[2026-08-06T19:16:52.969698100] [HOSPITAL_ADMIT] CityDental admitted case C-600ce
+[2026-08-06T19:16:54.503271400] [DISPATCH_CALL] Received call for GENERAL at Airport(0,0) [Priority Added to Queue]
+[2026-08-06T19:16:54.970886500] [AMBULANCE_TRANSPORT] Amb-3 transporting to EyeCareClinic
+[2026-08-06T19:16:54.973775300] [DISPATCH_ASSIGN] Amb-2 won bid for case C-b815b with score: 6.50
+[2026-08-06T19:16:54.973775300] [AMBULANCE_DISPATCH] Amb-2 dispatched to C-b815b
+[2026-08-06T19:16:54.975313500] [HOSPITAL_ADMIT] EyeCareClinic admitted case C-d6b40
+[2026-08-06T19:16:56.979019300] [AMBULANCE_TRANSPORT] Amb-2 transporting to CentralTrauma
+[2026-08-06T19:16:56.983731500] [HOSPITAL_ADMIT] CentralTrauma admitted case C-b815b
+[2026-08-06T19:16:57.499112100] [DISPATCH_CALL] Received call for CARDIAC at Downtown(0,0) [Priority Added to Queue]
+[2026-08-06T19:16:57.502175100] [DISPATCH_ASSIGN] Amb-5 won bid for case C-3515a with score: 0.00
+[2026-08-06T19:16:57.502175100] [AMBULANCE_DISPATCH] Amb-5 dispatched to C-3515a
+[2026-08-06T19:16:58.985306500] [AMBULANCE_TRANSPORT] Amb-5 transporting to CardioCenter
+[2026-08-06T19:16:59.314999500] [HOSPITAL_ADMIT] CardioCenter admitted case C-3515a
+[2026-08-06T19:16:59.499964500] [DISPATCH_CALL] Received call for TRAUMA at Airport(0,0) [Priority Added to Queue]
+[2026-08-06T19:16:59.503133400] [DISPATCH_ASSIGN] Amb-2 won bid for case C-c8572 with score: 0.00
+[2026-08-06T19:16:59.504138400] [AMBULANCE_DISPATCH] Amb-2 dispatched to C-c8572
+[2026-08-06T19:17:00.499451400] [DISPATCH_CALL] Received call for PEDIATRIC at Suburbs(0,0) [Priority Added to Queue]
+[2026-08-06T19:17:01.320303900] [AMBULANCE_TRANSPORT] Amb-2 transporting to CentralTrauma
+[2026-08-06T19:17:01.324582400] [HOSPITAL_ADMIT] CentralTrauma admitted case C-c8572
+[2026-08-06T19:17:01.330267900] [DISPATCH_ASSIGN] Amb-3 won bid for case C-205be with score: 0.00
+[2026-08-06T19:17:01.330267900] [AMBULANCE_DISPATCH] Amb-3 dispatched to C-205be
+[2026-08-06T19:17:02.499580] [DISPATCH_CALL] Received call for BURN at Center(0,0) [Priority Added to Queue]
+[2026-08-06T19:17:02.515966200] [TRAFFIC_CLEAR] Road cleared: West to Center
+[2026-08-06T19:17:03.332346400] [AMBULANCE_TRANSPORT] Amb-3 transporting to Pediatrics
+[2026-08-06T19:17:03.937935700] [DISPATCH_ASSIGN] Amb-4 won bid for case C-63251 with score: 0.00
+[2026-08-06T19:17:03.938443900] [AMBULANCE_DISPATCH] Amb-4 dispatched to C-63251
+[2026-08-06T19:17:03.938443900] [HOSPITAL_ADMIT] Pediatrics admitted case C-205be
+[2026-08-06T19:17:04.499547600] [DISPATCH_CALL] Received call for NEUROLOGICAL at North(0,0) [Priority Added to Queue]
+[2026-08-06T19:17:05.940539500] [AMBULANCE_TRANSPORT] Amb-4 transporting to MetroBurnCenter
+[2026-08-06T19:17:06.249262800] [HOSPITAL_ADMIT] MetroBurnCenter admitted case C-63251
+[2026-08-06T19:17:06.254273900] [DISPATCH_ASSIGN] Amb-1 won bid for case C-6d5de with score: 0.00
+[2026-08-06T19:17:06.257273500] [AMBULANCE_DISPATCH] Amb-1 dispatched to C-6d5de
+[2026-08-06T19:17:07.499088] [DISPATCH_CALL] Received call for GENERAL at East(0,0) [Priority Added to Queue]
+[2026-08-06T19:17:08.253426200] [AMBULANCE_TRANSPORT] Amb-1 transporting to NeuroInstitute
+[2026-08-06T19:17:08.505804700] [DISPATCH_ASSIGN] Amb-1 won bid for case C-a44a9 with score: 2.55
+[2026-08-06T19:17:08.505804700] [AMBULANCE_DISPATCH] Amb-1 dispatched to C-a44a9
+[2026-08-06T19:17:08.554282100] [HOSPITAL_ADMIT] NeuroInstitute admitted case C-6d5de
+[2026-08-06T19:17:09.500346100] [DISPATCH_CALL] Received call for TRAUMA at West(0,0) [Priority Added to Queue]
+[2026-08-06T19:17:10.556789800] [AMBULANCE_TRANSPORT] Amb-1 transporting to Pediatrics
+[2026-08-06T19:17:10.567455900] [HOSPITAL_ADMIT] Pediatrics admitted case C-a44a9
+[2026-08-06T19:17:10.570455900] [DISPATCH_ASSIGN] Amb-4 won bid for case C-1182b with score: 0.00
+[2026-08-06T19:17:10.571716200] [AMBULANCE_DISPATCH] Amb-4 dispatched to C-1182b
+[2026-08-06T19:17:12.498151700] [TRAFFIC_ALERT] ROAD_BLOCKED: East to Center (Delay increased!)
+[2026-08-06T19:17:12.500160] [DISPATCH_CALL] Received call for CARDIAC at Suburbs(0,0) [Priority Added to Queue]
+[2026-08-06T19:17:12.569002200] [AMBULANCE_TRANSPORT] Amb-4 transporting to GenHosp-1
+[2026-08-06T19:17:13.123584] [HOSPITAL_ADMIT] GenHosp-1 admitted case C-1182b
+[2026-08-06T19:17:13.126052700] [DISPATCH_ASSIGN] Amb-5 won bid for case C-f8c94 with score: 5.00
+[2026-08-06T19:17:13.126556800] [AMBULANCE_DISPATCH] Amb-5 dispatched to C-f8c94
+[2026-08-06T19:17:14.500698100] [DISPATCH_CALL] Received call for PEDIATRIC at Downtown(0,0) [Priority Added to Queue]
+[2026-08-06T19:17:15.126826100] [AMBULANCE_TRANSPORT] Amb-5 transporting to CardioCenter
+[2026-08-06T19:17:15.378848900] [DISPATCH_ASSIGN] Amb-4 won bid for case C-08ea6 with score: 3.50
+[2026-08-06T19:17:15.379835100] [AMBULANCE_DISPATCH] Amb-4 dispatched to C-08ea6
+[2026-08-06T19:17:15.382081200] [HOSPITAL_ADMIT] CardioCenter admitted case C-f8c94
+[2026-08-06T19:17:17.384049100] [AMBULANCE_TRANSPORT] Amb-4 transporting to Pediatrics
+[2026-08-06T19:17:17.503169800] [DISPATCH_CALL] Received call for DENTAL at North(0,0) [Priority Added to Queue]
+[2026-08-06T19:17:17.765368100] [DISPATCH_ASSIGN] Amb-1 won bid for case C-69d49 with score: 4.00
+[2026-08-06T19:17:17.766368600] [AMBULANCE_DISPATCH] Amb-1 dispatched to C-69d49
+[2026-08-06T19:17:17.767367700] [HOSPITAL_ADMIT] Pediatrics admitted case C-08ea6
+[2026-08-06T19:17:19.769997700] [AMBULANCE_TRANSPORT] Amb-1 transporting to CityDental
+[2026-08-06T19:17:20.110644300] [HOSPITAL_ADMIT] CityDental admitted case C-69d49
+[2026-08-06T19:17:20.503405800] [DISPATCH_CALL] Received call for OPHTHALMOLOGY at South(0,0) [Priority Added to Queue]
+[2026-08-06T19:17:20.509260900] [DISPATCH_ASSIGN] Amb-5 won bid for case C-df632 with score: 0.00
+[2026-08-06T19:17:20.528779] [AMBULANCE_DISPATCH] Amb-5 dispatched to C-df632
+[2026-08-06T19:17:22.120180700] [AMBULANCE_TRANSPORT] Amb-5 transporting to EyeCareClinic
+[2026-08-06T19:17:22.401467] [HOSPITAL_ADMIT] EyeCareClinic admitted case C-df632
+[2026-08-06T19:17:22.504456200] [TRAFFIC_CLEAR] Road cleared: East to Center
+[2026-08-06T19:17:22.512492600] [DISPATCH_CALL] Received call for BURN at Airport(0,0) [Priority Added to Queue]
+[2026-08-06T19:17:22.519265300] [DISPATCH_ASSIGN] Amb-2 won bid for case C-af84f with score: 0.00
+[2026-08-06T19:17:22.522272300] [AMBULANCE_DISPATCH] Amb-2 dispatched to C-af84f
+[2026-08-06T19:17:24.426757200] [AMBULANCE_TRANSPORT] Amb-2 transporting to MetroBurnCenter
+[2026-08-06T19:17:25.138973800] [HOSPITAL_ADMIT] MetroBurnCenter admitted case C-af84f

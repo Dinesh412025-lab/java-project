@@ -1,0 +1,1 @@
+[2026-07-21T19:14:43.150661400] [DISPATCH_CALL] Received call for CARDIAC at Center(0,0)

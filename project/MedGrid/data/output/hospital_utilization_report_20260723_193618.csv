@@ -1,0 +1,9 @@
+HospitalName,ERCapacity,ICUCapacity,CurrentLoad,Revenue
+GenHosp-1,10,5,0.0,0.00
+CardioCenter,5,10,0.0,0.00
+Pediatrics,8,2,0.0,0.00
+MetroBurnCenter,4,6,0.0,0.00
+NeuroInstitute,6,12,0.0,0.00
+CityDental,3,0,0.0,0.00
+EyeCareClinic,5,0,0.0,0.00
+CentralTrauma,15,10,0.0,0.00

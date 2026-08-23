@@ -1,0 +1,7 @@
+CaseID,Severity,Type,HospitalAssigned,AmbulanceID,ResponseTimeMs,Outcome
+C-25bf7,CRITICAL,CARDIAC,CardioCenter,Amb-1,498,SUCCESS
+C-2ce4e,HIGH,TRAUMA,GenHosp-1,Amb-2,539,SUCCESS
+C-16ac8,MEDIUM,PEDIATRIC,Pediatrics,Amb-3,1542,SUCCESS
+C-8979c,HIGH,GENERAL,Pediatrics,Amb-4,2101,SUCCESS
+C-d8c6e,CRITICAL,CARDIAC,CardioCenter,Amb-1,2103,SUCCESS
+C-98a51,LOW,GENERAL,Pediatrics,Amb-5,2295,SUCCESS
