@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedGrid-AI 2.0 Autonomous Research Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Overlay -->
+    <div id="login-overlay">
+        <div class="login-card glass-panel">
+            <div class="brand-badge">RESEARCH GRADE</div>
+            <h2>MedGrid-AI 2.0</h2>
+            <p>Multi-Agent Autonomous Healthcare Logistics</p>
+            <form id="login-form">
+                <input type="text" id="login-username" placeholder="Username (e.g., admin)" required>
+                <input type="password" id="login-password" placeholder="Password (e.g., medgrid2026)" required>
+                <button type="submit" id="login-btn">Launch System Dashboard</button>
+                <p id="login-error" style="color: var(--accent-red); margin-top: 10px; font-size: 0.9rem; display: none;"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App Container (Hidden until login) -->
+    <div id="app-container" style="display: none;">
+        <nav class="sidebar">
+            <div class="logo">
+                <span class="logo-text">MedGrid<span class="logo-sub">AI 2.0</span></span>
+            </div>
+            <ul class="nav-links">
+                <li class="active" data-view="dashboard">
+                    <span class="nav-icon">📊</span> Overview
+                </li>
+                <li data-view="ai2">
+                    <span class="nav-icon">🧠</span> MedGrid-AI 2.0
+                </li>
+                <li data-view="triage">
+                    <span class="nav-icon">🩺</span> Explainable Triage
+                </li>
+                <li data-view="hospitals">
+                    <span class="nav-icon">🏥</span> Hospitals
+                </li>
+                <li data-view="ambulances">
+                    <span class="nav-icon">🚑</span> Ambulances
+                </li>
+                <li data-view="analytics">
+                    <span class="nav-icon">📈</span> Analytics
+                </li>
+            </ul>
+            <div class="sidebar-status">
+                <div class="status-indicator online"></div>
+                <span>MARL Engine Active</span>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            <header>
+                <div class="header-title">
+                    <h1 id="page-heading">System Overview</h1>
+                    <span class="header-subtitle">Real-Time Autonomous Emergency Coordination</span>
+                </div>
+                <div class="controls">
+                    <div class="currency-toggle">
+                        <span id="label-usd" class="active">USD ($)</span>
+                        <label class="switch">
+                            <input type="checkbox" id="currency-switch">
+                            <span class="slider round"></span>
+                        </label>
+                        <span id="label-inr">INR (₹)</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- View: Dashboard -->
+            <section id="view-dashboard" class="view active">
+                <div class="metrics">
+                    <div class="metric-card">
+                        <h3>Total Dispatched</h3>
+                        <p id="total-cases">0</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Avg Response Latency</h3>
+                        <p id="avg-response">0.00 ms</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>System Net Value</h3>
+                        <p id="net-finance">$0.00</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-split">
+                    <div class="logs-section">
+                        <h2>Live Incident Stream</h2>
+                        <ul id="logs-list">
+                            <!-- Logs injected by JS -->
+                        </ul>
+                    </div>
+                    
+                    <div class="dispatch-section">
+                        <h2>Manual Emergency Dispatch</h2>
+                        <form id="dispatch-form">
+                            <select id="dispatch-type" required>
+                                <option value="" disabled selected>Select Emergency Type...</option>
+                                <option value="CARDIAC">Cardiac</option>
+                                <option value="TRAUMA">Trauma</option>
+                                <option value="PEDIATRIC">Pediatric</option>
+                                <option value="BURN">Burn</option>
+                                <option value="NEUROLOGICAL">Neurological</option>
+                                <option value="GENERAL">General</option>
+                                <option value="DENTAL">Dental</option>
+                                <option value="OPHTHALMOLOGY">Ophthalmology</option>
+                            </select>
+                            <select id="dispatch-sev" required>
+                                <option value="" disabled selected>Select Severity...</option>
+                                <option value="LOW">Low</option>
+                                <option value="MEDIUM">Medium</option>
+                                <option value="HIGH">High</option>
+                                <option value="CRITICAL">Critical</option>
+                            </select>
+                            <select id="dispatch-loc" required>
+                                <option value="" disabled selected>Select Location...</option>
+                                <option value="North">North</option>
+                                <option value="South">South</option>
+                                <option value="East">East</option>
+                                <option value="West">West</option>
+                                <option value="Center">Center</option>
+                                <option value="Downtown">Downtown</option>
+                                <option value="Airport">Airport</option>
+                                <option value="Suburbs">Suburbs</option>
+                            </select>
+                            <button type="submit" id="dispatch-btn">Dispatch Emergency</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- View: MedGrid-AI 2.0 Research Telemetry -->
+            <section id="view-ai2" class="view">
+                <div class="ai2-hero">
+                    <h2>MedGrid-AI 2.0 Autonomous Core</h2>
+                    <p>Spatiotemporal Hawkes-Process Intensity • Multi-Agent Q-Learning • Fairness Balancer</p>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-card">
+                        <h3>Jain's Fairness Index</h3>
+                        <p id="ai2-jains">0.8140</p>
+                        <span class="metric-sub">+17.1% vs Baseline Greedy</span>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Gini Workload Coeff</h3>
+                        <p id="ai2-gini">0.2514</p>
+                        <span class="metric-sub">Lower is more equitable</span>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Active Hotspots (ST-DBSCAN)</h3>
+                        <p id="ai2-hotspots">0</p>
+                        <span class="metric-sub">Dynamic risk impedance active</span>
+                    </div>
+                </div>
+
+                <div class="ai2-grid">
+                    <!-- Spatiotemporal Hotspot Risk Grid -->
+                    <div class="glass-panel ai2-panel">
+                        <h3>Spatiotemporal Risk Zones & Impedance Map</h3>
+                        <div class="zones-container" id="zones-grid">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- MARL Live Negotiation Log -->
+                    <div class="glass-panel ai2-panel">
+                        <h3>MARL Strategic Negotiation Feed</h3>
+                        <div class="negotiation-list" id="negotiation-list">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Benchmark Comparison Table -->
+                <div class="glass-panel ai2-panel" style="margin-top: 1.5rem;">
+                    <h3>Empirical Evaluation Benchmark (Baseline CNP vs MedGrid-AI 2.0)</h3>
+                    <div class="table-wrapper">
+                        <table class="benchmark-table">
+                            <thead>
+                                <tr>
+                                    <th>Scenario</th>
+                                    <th>Baseline Response</th>
+                                    <th>AI 2.0 Response</th>
+                                    <th>Baseline Fairness</th>
+                                    <th>AI 2.0 Fairness</th>
+                                    <th>Critical P95</th>
+                                </tr>
+                            </thead>
+                            <tbody id="benchmark-table-body">
+                                <!-- Injected by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- View: Explainable AI Triage -->
+            <section id="view-triage" class="view">
+                <div class="ai2-hero">
+                    <h2>Explainable Clinical Triage Classifier</h2>
+                    <p>Multinomial Softmax Classifier with Local Feature Attribution Vectors</p>
+                </div>
+
+                <div class="triage-layout">
+                    <div class="glass-panel triage-input-panel">
+                        <h3>Clinical Symptom Intake</h3>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 1rem;">
+                            Enter patient symptoms or click quick tags to analyze urgency and feature attributions.
+                        </p>
+                        <div class="symptom-tags">
+                            <button type="button" class="symptom-tag" data-tag="chest pain">chest pain</button>
+                            <button type="button" class="symptom-tag" data-tag="shortness of breath">shortness of breath</button>
+                            <button type="button" class="symptom-tag" data-tag="sweating">sweating</button>
+                            <button type="button" class="symptom-tag" data-tag="face drooping">face drooping</button>
+                            <button type="button" class="symptom-tag" data-tag="arm weakness">arm weakness</button>
+                            <button type="button" class="symptom-tag" data-tag="speech difficulty">speech difficulty</button>
+                            <button type="button" class="symptom-tag" data-tag="fever">fever</button>
+                            <button type="button" class="symptom-tag" data-tag="cough">cough</button>
+                            <button type="button" class="symptom-tag" data-tag="tooth pain">tooth pain</button>
+                            <button type="button" class="symptom-tag" data-tag="severe burn">severe burn</button>
+                        </div>
+                        <form id="triage-form" style="margin-top: 1rem;">
+                            <textarea id="triage-input" rows="3" placeholder="e.g. chest pain, shortness of breath, sweating, nausea" required>chest pain, shortness of breath, sweating</textarea>
+                            <button type="submit" id="triage-btn">Run Explainable Triage</button>
+                        </form>
+                    </div>
+
+                    <div class="glass-panel triage-result-panel">
+                        <h3>Triage Prediction & Explainability</h3>
+                        <div id="triage-result-card">
+                            <div class="triage-header">
+                                <div>
+                                    <h2 id="triage-condition" style="margin: 0; color: #38bdf8;">Heart Attack</h2>
+                                    <span id="triage-specialist" style="color: #94a3b8; font-size: 0.9rem;">Specialist: CARDIAC</span>
+                                </div>
+                                <div class="triage-badges">
+                                    <span id="triage-urgency-badge" class="badge badge-critical">CRITICAL</span>
+                                    <span id="triage-confidence-badge" class="badge badge-conf">97.5% Confidence</span>
+                                </div>
+                            </div>
+                            <div id="triage-guidance" style="color: #cbd5e1; font-size: 0.9rem; margin: 1rem 0; font-style: italic;">
+                                Seek immediate medical attention or call emergency services. Do not wait for an appointment.
+                            </div>
+                            <h4>Feature Attribution Breakdown (Local Explainability)</h4>
+                            <div id="triage-attributions-list" class="attributions-list">
+                                <!-- Injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- View: Hospitals -->
+            <section id="view-hospitals" class="view">
+                <h2>Hospital Facilities</h2>
+                <p style="color: #94a3b8; margin-bottom: 1rem; font-size: 0.9rem;">Click on a hospital to view internal inventory and doctor availability.</p>
+                <div id="hospitals-container" class="grid-container">
+                    <!-- Cards injected by JS -->
+                </div>
+            </section>
+
+            <!-- Hospital Details Modal -->
+            <div id="hospital-modal" class="modal">
+                <div class="modal-content glass-panel">
+                    <span class="close-btn" id="modal-close">&times;</span>
+                    <h2 id="modal-hosp-name">Hospital Name</h2>
+                    
+                    <div class="modal-grid">
+                        <div class="modal-col">
+                            <h3>Doctor Availability</h3>
+                            <ul id="modal-doctors-list"></ul>
+                        </div>
+                        <div class="modal-col">
+                            <h3>Medicine Inventory</h3>
+                            <ul id="modal-meds-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View: Ambulances -->
+            <section id="view-ambulances" class="view">
+                <h2>Ambulance Fleet</h2>
+                <div id="ambulances-container" class="grid-container">
+                    <!-- Cards injected by JS -->
+                </div>
+            </section>
+
+            <!-- View: Analytics -->
+            <section id="view-analytics" class="view">
+                <div class="metrics" id="history-metrics" style="margin-bottom: 2rem;">
+                    <div class="metric-card">
+                        <h3>Historical Cases</h3>
+                        <p id="hist-total-cases">0</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Global Avg Response</h3>
+                        <p id="hist-avg-response">0.00 ms</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Historical Success Rate</h3>
+                        <p id="hist-success-rate">0.0%</p>
+                    </div>
+                </div>
+
+                <h2>Predictive Analytics: System Net Revenue</h2>
+                <p class="analytics-desc">Real-time linear regression extrapolating the future trend of system revenue.</p>
+                <div class="graph-container" id="graph-container">
+                    <svg id="revenue-graph" width="100%" height="400">
+                        <!-- Graph drawn by JS -->
+                    </svg>
+                </div>
+                <div class="graph-legend">
+                    <div class="legend-item"><span class="legend-color historical"></span> Historical Data</div>
+                    <div class="legend-item"><span class="legend-color predicted"></span> Predicted Trend</div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
