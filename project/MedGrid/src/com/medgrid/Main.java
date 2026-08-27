@@ -120,7 +120,8 @@ public class Main {
             SimulationEngine engine = new SimulationEngine(hospitalAgents, ambulanceAgents, dispatchAgent, eventGenerator, trafficManager);
 
             // 7. Start Web Server
-            WebServer webServer = new WebServer(8080, dispatchAgent, graph);
+            int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
+            WebServer webServer = new WebServer(port, dispatchAgent, graph);
             webServer.start();
 
             // 8. Run
@@ -128,7 +129,7 @@ public class Main {
             engine.waitForCompletion();
             engine.shutdown();
             
-            System.out.println("Simulation run completed successfully. Web server remains alive at http://localhost:8080");
+           System.out.println("Simulation run completed successfully. Web server remains alive on port " + port);
             
             // 9. Shutdown persistence and generate report
             DataExporter.getInstance().generateUtilizationReport(hospitals);
