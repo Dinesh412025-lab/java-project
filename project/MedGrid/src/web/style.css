@@ -1208,3 +1208,21 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* Firebase authentication UI */
+.auth-label { display: block; text-align: left; color: #cbd5e1; font-size: 0.82rem; margin: 0 0 0.35rem; }
+.google-login-btn, .auth-mode-toggle, .logout-btn { border: 1px solid var(--glass-border); border-radius: 8px; cursor: pointer; font: inherit; font-weight: 600; }
+.google-login-btn { width: 100%; min-height: 44px; padding: 0.75rem 1rem; background: #fff; color: #1f2937; }
+.google-login-btn:hover { background: #f1f5f9; }
+.login-divider { display: flex; align-items: center; justify-content: center; margin: 1rem 0; color: #64748b; font-size: 0.78rem; }
+.auth-mode-toggle { width: 100%; margin-top: 0.8rem; min-height: 42px; padding: 0.65rem 0.8rem; background: transparent; color: #93c5fd; }
+.auth-mode-toggle:hover { background: rgba(59, 130, 246, 0.12); }
+.privacy-note { margin: 1rem 0 0 !important; color: #64748b !important; font-size: 0.72rem !important; line-height: 1.45; }
+#login-error { display: none; color: var(--accent-red); margin: 0.8rem 0 0; font-size: 0.85rem; line-height: 1.35; }
+.controls { display: flex; align-items: center; justify-content: flex-end; gap: 1rem; flex-wrap: wrap; }
+.user-controls { display: flex; align-items: center; gap: 0.65rem; min-width: 0; }
+.auth-user-email { max-width: 220px; overflow: hidden; color: #94a3b8; font-size: 0.8rem; text-overflow: ellipsis; white-space: nowrap; }
+.logout-btn { min-height: 40px; padding: 0.55rem 0.8rem; background: rgba(239, 68, 68, 0.12); color: #fca5a5; }
+.logout-btn:hover { background: rgba(239, 68, 68, 0.22); }
+@media (max-width: 760px) { .controls, .user-controls { justify-content: space-between; width: 100%; } .auth-user-email { max-width: calc(100vw - 130px); } }
