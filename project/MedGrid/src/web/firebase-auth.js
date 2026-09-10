@@ -14,7 +14,10 @@ function errorText(error) {
         'auth/invalid-email': 'Enter a valid email address.',
         'auth/popup-closed-by-user': 'The Google sign-in window was closed.',
         'auth/popup-blocked': 'Allow pop-ups in your browser to continue with Google.',
-        'auth/too-many-requests': 'Too many attempts. Please wait and try again.'
+        'auth/too-many-requests': 'Too many attempts. Please wait and try again.',
+        'auth/operation-not-allowed': 'This sign-in method is not enabled in Firebase yet.',
+        'auth/network-request-failed': 'Network error. Check your connection and try again.',
+        'auth/unauthorized-domain': 'This app domain is not authorized in Firebase.'
     };
     return messages[error?.code] || 'Authentication failed. Please try again.';
 }
