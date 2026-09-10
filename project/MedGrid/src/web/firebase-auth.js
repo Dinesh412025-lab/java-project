@@ -41,6 +41,8 @@ function setupPrivacyFirstUi() {
     const password = document.getElementById('login-password');
     const loginButton = document.getElementById('login-btn');
     if (!card || !form || !emailInput || !password || !loginButton) return;
+    if (form.dataset.firebaseAuthBound === 'true') return;
+    form.dataset.firebaseAuthBound = 'true';
 
     emailInput.type = 'email';
     emailInput.id = 'login-email';
@@ -97,6 +99,7 @@ function setupPrivacyFirstUi() {
         google.disabled = true;
         google.textContent = 'Opening Google...';
         try {
+            if (!auth) { showError('Firebase Authentication is not configured on this server.'); return; }
             await signInWithPopup(auth, new GoogleAuthProvider());
         } catch (error) {
             showError(errorText(error));
@@ -113,6 +116,7 @@ function setupPrivacyFirstUi() {
         loginButton.disabled = true;
         loginButton.textContent = mode === 'signup' ? 'Creating account...' : 'Signing in...';
         try {
+            if (!auth) { showError('Firebase Authentication is not configured on this server.'); return; }
             const email = document.getElementById('login-email').value.trim();
             if (mode === 'signup') await createUserWithEmailAndPassword(auth, email, password.value);
             else await signInWithEmailAndPassword(auth, email, password.value);
@@ -161,6 +165,7 @@ window.fetch = async (input, options = {}) => {
 };
 
 (async () => {
+    setupPrivacyFirstUi();
     try {
         const response = await originalFetch('/api/firebase-config');
         if (!response.ok) throw new Error('Firebase is not configured on this server.');
