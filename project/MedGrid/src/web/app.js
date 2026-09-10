@@ -1,52 +1,6 @@
 let currentCurrency = 'USD';
 const exchangeRate = 83.0; // 1 USD = 83 INR
-let authToken = null;
-
-// Login Logic
-document.getElementById('login-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const user = document.getElementById('login-username').value;
-    const pass = document.getElementById('login-password').value;
-    const btn = document.getElementById('login-btn');
-    const err = document.getElementById('login-error');
-    
-    btn.textContent = 'Authenticating...';
-    btn.disabled = true;
-    err.style.display = 'none';
-    
-    try {
-        const response = await fetch('/api/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username: user, password: pass })
-        });
-        
-        const data = await response.json();
-        
-        if (response.ok && data.status === 'success') {
-            authToken = data.token;
-            document.getElementById('login-overlay').style.display = 'none';
-            document.getElementById('app-container').style.display = 'flex';
-            
-            // Start periodic polling
-            setInterval(fetchDashboardData, 1000);
-            setInterval(fetchAI2Data, 2000);
-            fetchDashboardData();
-            fetchHistoryData();
-            fetchAI2Data();
-            runTriagePrediction("chest pain, shortness of breath, sweating");
-        } else {
-            err.textContent = data.error || 'Login failed';
-            err.style.display = 'block';
-        }
-    } catch (error) {
-        err.textContent = 'Network error connecting to server';
-        err.style.display = 'block';
-    } finally {
-        btn.textContent = 'Launch System Dashboard';
-        btn.disabled = false;
-    }
-});
+// Authentication is handled by firebase-auth.js.
 
 // Format money based on active currency
 function formatMoney(usdAmount) {
