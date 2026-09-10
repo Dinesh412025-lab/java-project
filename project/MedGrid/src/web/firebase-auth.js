@@ -37,41 +37,52 @@ function clearError() {
 function setupPrivacyFirstUi() {
     const card = document.querySelector('.login-card');
     const form = document.getElementById('login-form');
-    const username = document.getElementById('login-username');
+    const emailInput = document.getElementById('login-email') || document.getElementById('login-username');
     const password = document.getElementById('login-password');
     const loginButton = document.getElementById('login-btn');
-    if (!card || !form || !username || !password || !loginButton) return;
+    if (!card || !form || !emailInput || !password || !loginButton) return;
 
-    username.type = 'email';
-    username.id = 'login-email';
-    username.name = 'email';
-    username.placeholder = 'Email address';
-    username.autocomplete = 'email';
+    emailInput.type = 'email';
+    emailInput.id = 'login-email';
+    emailInput.name = 'email';
+    emailInput.placeholder = 'Email address';
+    emailInput.autocomplete = 'email';
     password.autocomplete = 'current-password';
     password.minLength = 6;
 
-    const google = document.createElement('button');
-    google.type = 'button';
-    google.id = 'google-login-btn';
-    google.className = 'google-login-btn';
+    let google = document.getElementById('google-login-btn');
+    if (!google) {
+        google = document.createElement('button');
+        google.type = 'button';
+        google.id = 'google-login-btn';
+        google.className = 'google-login-btn';
+        form.parentNode.insertBefore(google, form);
+    }
     google.textContent = 'G  Continue with Google';
-    form.parentNode.insertBefore(google, form);
 
-    const divider = document.createElement('div');
-    divider.className = 'login-divider';
-    divider.textContent = 'or use email';
-    form.parentNode.insertBefore(divider, form);
+    if (!form.parentNode.querySelector('.login-divider')) {
+        const divider = document.createElement('div');
+        divider.className = 'login-divider';
+        divider.textContent = 'or use email';
+        form.parentNode.insertBefore(divider, form);
+    }
 
-    const toggle = document.createElement('button');
-    toggle.type = 'button';
-    toggle.className = 'auth-mode-toggle';
+    let toggle = document.getElementById('auth-mode-toggle');
+    if (!toggle) {
+        toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.id = 'auth-mode-toggle';
+        toggle.className = 'auth-mode-toggle';
+        form.parentNode.insertBefore(toggle, document.getElementById('login-error'));
+    }
     toggle.textContent = 'Create a new account';
-    form.parentNode.insertBefore(toggle, document.getElementById('login-error'));
 
-    const privacy = document.createElement('p');
-    privacy.className = 'privacy-note';
-    privacy.textContent = 'Your password is handled by Firebase Authentication and is never stored by MedGrid.';
-    form.parentNode.insertBefore(privacy, document.getElementById('login-error'));
+    if (!form.parentNode.querySelector('.privacy-note')) {
+        const privacy = document.createElement('p');
+        privacy.className = 'privacy-note';
+        privacy.textContent = 'Your password is handled by Firebase Authentication and is never stored by MedGrid.';
+        form.parentNode.insertBefore(privacy, document.getElementById('login-error'));
+    }
 
     toggle.addEventListener('click', () => {
         mode = mode === 'signin' ? 'signup' : 'signin';
@@ -113,7 +124,7 @@ function setupPrivacyFirstUi() {
         }
     }, true);
 
-    const note = card.querySelector('p:not(#login-error)');
+    const note = card.querySelector('p:not(#login-error):not(.privacy-note)');
     if (note) note.textContent = 'Sign in securely with Google or your email address.';
 }
 
