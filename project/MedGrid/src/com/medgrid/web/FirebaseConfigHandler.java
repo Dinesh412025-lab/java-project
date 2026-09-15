@@ -23,13 +23,13 @@ public class FirebaseConfigHandler implements HttpHandler {
             return;
         }
 
-        String projectId = environment("FIREBASE_PROJECT_ID");
-        String apiKey = environment("FIREBASE_WEB_API_KEY");
-        String appId = environment("FIREBASE_APP_ID");
-        String authDomain = environment("FIREBASE_AUTH_DOMAIN");
-        if (authDomain.isEmpty() && !projectId.isEmpty()) {
-            authDomain = projectId + ".firebaseapp.com";
-        }
+        String projectId = environment("FIREBASE_PROJECT_ID", "medgrid-be8b3");
+        String apiKey = environment("FIREBASE_WEB_API_KEY", "AIzaSyBexe1F1BXkOoDWi-uk0XfQM2S9cdUEZc0");
+        String appId = environment("FIREBASE_APP_ID", "1:136205058814:web:b1bcfe227189f430e21baf");
+        String authDomain = environment("FIREBASE_AUTH_DOMAIN", "medgrid-be8b3.firebaseapp.com");
+        String storageBucket = environment("FIREBASE_STORAGE_BUCKET", "medgrid-be8b3.firebasestorage.app");
+        String messagingSenderId = environment("FIREBASE_MESSAGING_SENDER_ID", "136205058814");
+        String measurementId = environment("FIREBASE_MEASUREMENT_ID", "G-KM69K3E1E0");
 
         if (projectId.isEmpty() || apiKey.isEmpty() || appId.isEmpty()) {
             sendJson(exchange, 503, "{\"error\":\"Firebase Authentication is not configured on the server.\"}");
@@ -40,14 +40,17 @@ public class FirebaseConfigHandler implements HttpHandler {
                 + "\"apiKey\":\"" + jsonEscape(apiKey) + "\","
                 + "\"authDomain\":\"" + jsonEscape(authDomain) + "\","
                 + "\"projectId\":\"" + jsonEscape(projectId) + "\","
+                + "\"storageBucket\":\"" + jsonEscape(storageBucket) + "\","
+                + "\"messagingSenderId\":\"" + jsonEscape(messagingSenderId) + "\","
+                + "\"measurementId\":\"" + jsonEscape(measurementId) + "\","
                 + "\"appId\":\"" + jsonEscape(appId) + "\""
                 + "}";
         sendJson(exchange, 200, body);
     }
 
-    private String environment(String name) {
+    private String environment(String name, String defaultValue) {
         String value = System.getenv(name);
-        return value == null ? "" : value.trim();
+        return (value == null || value.trim().isEmpty()) ? defaultValue : value.trim();
     }
 
     private String jsonEscape(String value) {
