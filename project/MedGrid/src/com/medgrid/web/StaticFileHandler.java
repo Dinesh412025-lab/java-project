@@ -26,13 +26,7 @@ public class StaticFileHandler implements HttpHandler {
             else if (path.endsWith(".js")) contentType = "application/javascript";
             
             byte[] fileBytes = Files.readAllBytes(file.toPath());
-            if (path.equals("/index.html")) {
-                String html = new String(fileBytes, java.nio.charset.StandardCharsets.UTF_8);
-                String tag = "<" + "script";
-                String endTag = "<" + "/script>";
-                html = html.replace(tag + " src=\"app.js\"" + endTag, tag + " type=\"module\" src=\"firebase-auth.js\"" + endTag + "\n    " + tag + " src=\"app.js\"" + endTag);
-                fileBytes = html.getBytes(java.nio.charset.StandardCharsets.UTF_8);
-            }
+
             exchange.getResponseHeaders().set("Content-Type", contentType);
             exchange.sendResponseHeaders(200, fileBytes.length);
             try (OutputStream os = exchange.getResponseBody()) {

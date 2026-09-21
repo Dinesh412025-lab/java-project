@@ -8,27 +8,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Login Overlay -->
-    <div id="login-overlay">
-        <div class="login-card glass-panel">
-            <div class="brand-badge">RESEARCH GRADE</div>
-            <h2>MedGrid-AI 2.0</h2>
-            <p>Sign in securely with Google or your email address.</p>
-            <button type="button" id="google-login-btn" class="google-login-btn">G  Continue with Google</button>
-            <div class="login-divider">or use email</div>
-            <form id="login-form">
-                <input type="email" id="login-email" name="email" placeholder="Email address" autocomplete="email" required>
-                <input type="password" id="login-password" placeholder="Password" autocomplete="current-password" minlength="6" required>
-                <button type="submit" id="login-btn">Sign in with email</button>
-                <p id="login-error" style="color: var(--accent-red); margin-top: 10px; font-size: 0.9rem; display: none;"></p>
-            </form>
-            <button type="button" id="auth-mode-toggle" class="auth-mode-toggle">Create a new account</button>
-            <p class="privacy-note">Your password is handled by Firebase Authentication and is never stored by MedGrid.</p>
-        </div>
-    </div>
-
-    <!-- Main App Container (Hidden until login) -->
-    <div id="app-container" style="display: none;">
+    <!-- Main App Container -->
+    <div id="app-container" style="display: flex;">
         <nav class="sidebar">
             <div class="logo">
                 <span class="logo-text">MedGrid<span class="logo-sub">AI 2.0</span></span>

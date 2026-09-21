@@ -474,3 +474,11 @@ document.getElementById('dispatch-form').addEventListener('submit', async (e) =>
         }, 1000);
     }
 });
+
+// Initialize Application Data
+setInterval(fetchDashboardData, 1000);
+setInterval(fetchAI2Data, 2000);
+fetchDashboardData();
+fetchHistoryData();
+fetchAI2Data();
+runTriagePrediction('chest pain, shortness of breath, sweating');
