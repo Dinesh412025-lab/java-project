@@ -1,4 +1,4 @@
-Username,Password,Role
-admin,medgrid2026,ADMIN
-dispatcher,dispatch123,USER
-guest,guest,GUEST
+Email,Password,Role
+admin@medgrid.com,medgrid2026,ADMIN
+dispatcher@medgrid.com,dispatch123,USER
+guest@medgrid.com,guest,GUEST

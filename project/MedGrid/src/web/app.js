@@ -475,10 +475,59 @@ document.getElementById('dispatch-form').addEventListener('submit', async (e) =>
     }
 });
 
-// Initialize Application Data
-setInterval(fetchDashboardData, 1000);
-setInterval(fetchAI2Data, 2000);
-fetchDashboardData();
-fetchHistoryData();
-fetchAI2Data();
-runTriagePrediction('chest pain, shortness of breath, sweating');
+// Login Logic
+document.getElementById('login-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+    const btn = document.getElementById('login-btn');
+    const errorEl = document.getElementById('login-error');
+    
+    errorEl.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Signing in...';
+
+    try {
+        const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+        const result = await response.json();
+        
+        if (!response.ok) {
+            throw new Error(result.error || 'Authentication failed');
+        }
+        
+        // Success
+        document.getElementById('login-overlay').style.display = 'none';
+        document.getElementById('app-container').style.display = 'flex';
+        
+        // Setup User Controls
+        const controls = document.querySelector('.controls');
+        if (controls && !document.getElementById('logout-btn')) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'user-controls';
+            wrapper.innerHTML = `<span class="auth-user-email">${email}</span><button type="button" id="logout-btn" class="logout-btn" style="padding: 0.25rem 0.5rem; font-size: 0.8rem; border-radius: 4px; border: 1px solid var(--glass-border); cursor: pointer;">Sign out</button>`;
+            controls.appendChild(wrapper);
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                location.reload();
+            });
+        }
+        
+        // Initialize Application Data
+        setInterval(fetchDashboardData, 1000);
+        setInterval(fetchAI2Data, 2000);
+        fetchDashboardData();
+        fetchHistoryData();
+        fetchAI2Data();
+        runTriagePrediction('chest pain, shortness of breath, sweating');
+        
+    } catch (err) {
+        errorEl.textContent = err.message;
+        errorEl.style.display = 'block';
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Sign in with email';
+    }
+});
