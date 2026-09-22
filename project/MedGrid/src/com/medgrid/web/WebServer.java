@@ -27,6 +27,7 @@ public class WebServer {
         server.createContext("/api/history", new HistoryHandler());
         server.createContext("/api/dispatch", new DispatchHandler(dispatchAgent, graph));
         server.createContext("/api/login", new LoginHandler());
+        server.createContext("/api/signup", new SignupHandler());
 
         server.createContext("/api/ai2", new AI2Handler(graph));
         server.createContext("/api/triage", new TriageApiHandler());

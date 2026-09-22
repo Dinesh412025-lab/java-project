@@ -476,6 +476,23 @@ document.getElementById('dispatch-form').addEventListener('submit', async (e) =>
 });
 
 // Login Logic
+let authMode = 'signin';
+document.getElementById('auth-mode-toggle')?.addEventListener('click', () => {
+    authMode = authMode === 'signin' ? 'signup' : 'signin';
+    const btn = document.getElementById('login-btn');
+    const toggle = document.getElementById('auth-mode-toggle');
+    const errorEl = document.getElementById('login-error');
+    
+    errorEl.style.display = 'none';
+    if (authMode === 'signup') {
+        btn.textContent = 'Create account';
+        toggle.textContent = 'Already have an account? Sign in';
+    } else {
+        btn.textContent = 'Sign in with email';
+        toggle.textContent = 'Create a new account';
+    }
+});
+
 document.getElementById('login-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('login-email').value.trim();
@@ -485,10 +502,11 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
     
     errorEl.style.display = 'none';
     btn.disabled = true;
-    btn.textContent = 'Signing in...';
+    btn.textContent = authMode === 'signup' ? 'Creating account...' : 'Signing in...';
 
     try {
-        const response = await fetch('/api/login', {
+        const endpoint = authMode === 'signup' ? '/api/signup' : '/api/login';
+        const response = await fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -497,6 +515,15 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
         
         if (!response.ok) {
             throw new Error(result.error || 'Authentication failed');
+        }
+        
+        if (authMode === 'signup') {
+            // Automatically switch to sign-in mode after successful signup
+            authMode = 'signin';
+            btn.textContent = 'Sign in with email';
+            document.getElementById('auth-mode-toggle').textContent = 'Create a new account';
+            alert('Account created successfully. Please sign in.');
+            return;
         }
         
         // Success
@@ -528,6 +555,6 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
         errorEl.style.display = 'block';
     } finally {
         btn.disabled = false;
-        btn.textContent = 'Sign in with email';
+        btn.textContent = authMode === 'signup' ? 'Create account' : 'Sign in with email';
     }
 });
